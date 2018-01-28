@@ -10,15 +10,33 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            var iccc = new ICCC();
-            var orcamento = new Orcamento(5000);
-            var calculadorDeImposto = new CalculadorDeImposto();
+            #region Aula 1
+            //var iccc = new ICCC();
+            //var orcamento = new Orcamento(5000);
+            //var calculadorDeImposto = new CalculadorDeImposto();
 
-            double valorImposto = calculadorDeImposto.Calcula(orcamento, iccc);
+            //double valorImposto = calculadorDeImposto.Calcula(orcamento, iccc);
 
-            Console.WriteLine(valorImposto);
+            //Console.WriteLine(valorImposto);
+
+            //Console.ReadKey();
+            #endregion 
+
+            var orcamento = new Orcamento(30);
+            orcamento.AdicionaItem(new Item("LAPIS", 10));
+            orcamento.AdicionaItem(new Item("CANETA", 20));
+            
+            double desconto = new CalculadorDeDescontos().Calcula(orcamento);
+
+            Console.WriteLine(desconto);
 
             Console.ReadKey();
+
+
+
+
+
+
 
         }
     }

@@ -8,11 +8,30 @@ namespace DesignPatterns
 {
     public class Orcamento
     {
-        public double Valor { get; private set; }
+        public double valor;
+        private IList<Item> listaProduto;
 
+        public IList<Item> ListaProduto
+        {
+            get { return listaProduto; }
+            set { listaProduto = value; }
+        }
+
+        public double Valor
+        {
+            get { return valor; }
+            set { valor = value; }
+        }
+        
         public Orcamento(double valor)
         {
             this.Valor = valor;
+            this.listaProduto = new List<Item>();
+        }
+
+        public void AdicionaItem(Item item)
+        {
+            this.listaProduto.Add(item);
         }
     }
 }
