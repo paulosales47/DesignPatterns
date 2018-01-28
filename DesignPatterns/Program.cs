@@ -10,6 +10,16 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            var iccc = new ICCC();
+            var orcamento = new Orcamento(5000);
+            var calculadorDeImposto = new CalculadorDeImposto();
+
+            double valorImposto = calculadorDeImposto.Calcula(orcamento, iccc);
+
+            Console.WriteLine(valorImposto);
+
+            Console.ReadKey();
+
         }
     }
 }
