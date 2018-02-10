@@ -8,14 +8,18 @@ namespace DesignPatterns
 {
     public class ICPP : TemplateMethodImposto
     {
+        public ICPP(Imposto imposto) : base(imposto) { }
+        
+        public ICPP() : base() { }
+
         protected override double MaximaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.07;
+            return orcamento.valor * 0.07 + CalculaProximoImposto(orcamento);
         }
 
         protected override double MinimaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.05;
+            return orcamento.valor * 0.05 + CalculaProximoImposto(orcamento);
         }
 
         protected override bool VerificaMaximaTaxacao(Orcamento orcamento)

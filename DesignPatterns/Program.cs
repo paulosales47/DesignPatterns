@@ -52,54 +52,66 @@ namespace DesignPatterns
             //orcamento.AdicionaItem(new Item("Carro", 30000));
             //Console.WriteLine(ihit.Calcula(orcamento));
 
-            var banco = new Banco
-            {
-                NomeBanco = "Banco do Brasil"
-                ,
-                Email = "contato@bb.com.br"
-                ,
-                Endereco = "Praça Cândido Dias Castejon - Centro - São José dos Campos - São Paulo"
-                ,
-                Data = DateTime.Now
-                ,
-                Telefone = "(12) 3907-4545"
-            };
+            //var banco = new Banco
+            //{
+            //    NomeBanco = "Banco do Brasil"
+            //    ,
+            //    Email = "contato@bb.com.br"
+            //    ,
+            //    Endereco = "Praça Cândido Dias Castejon - Centro - São José dos Campos - São Paulo"
+            //    ,
+            //    Data = DateTime.Now
+            //    ,
+            //    Telefone = "(12) 3907-4545"
+            //};
 
-            var listConta = new List<Conta>();
-            var random = new Random();
+            //var listConta = new List<Conta>();
+            //var random = new Random();
 
-            for (int i = 0; i < 30; i++)
-            {
-                var conta = new Conta
-                {
-                    Agencia = random.Next(1000,9999)
-                    ,
-                    NumeroConta = random.Next(10000, 99999)
-                    ,
-                    Saldo = random.NextDouble() * 1000
-                    ,
-                    Titular = $"Usuario - {i}"
-                    
-                };
+            //for (int i = 0; i < 30; i++)
+            //{
+            //    var conta = new Conta
+            //    {
+            //        Agencia = random.Next(1000,9999)
+            //        ,
+            //        NumeroConta = random.Next(10000, 99999)
+            //        ,
+            //        Saldo = random.NextDouble() * 1000
+            //        ,
+            //        Titular = $"Usuario - {i}"
 
-                listConta.Add(conta);
-            }
+            //    };
 
-            var relatorioSimples = new RelatorioSimples();
-            var relatorioComplexo = new RelatorioComplexo();
+            //    listConta.Add(conta);
+            //}
 
-            relatorioSimples.ImprimeRelatorio(listConta, banco);
+            //var relatorioSimples = new RelatorioSimples();
+            //var relatorioComplexo = new RelatorioComplexo();
 
-            Console.ReadKey();
-            Console.Clear();
+            //relatorioSimples.ImprimeRelatorio(listConta, banco);
 
-            relatorioComplexo.ImprimeRelatorio(listConta, banco);
+            //Console.ReadKey();
+            //Console.Clear();
+
+            //relatorioComplexo.ImprimeRelatorio(listConta, banco);
 
             #endregion Aula3
 
+            #region Aula4
 
+            //var imposto = new ISS(new ICMS(new ICPP(new ImpostoImportacao())));
+            //var orcamento = new Orcamento(1000);
+
+            //Console.WriteLine(imposto.Calcula(orcamento));
+            
+
+
+
+            #endregion Aula 4
 
             Console.ReadKey();
         }
     }
 }
+
+

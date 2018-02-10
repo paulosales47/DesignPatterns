@@ -8,7 +8,11 @@ namespace DesignPatterns
 {
     public abstract class TemplateMethodImposto : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public TemplateMethodImposto(Imposto imposto) : base(imposto) { }
+        
+        public TemplateMethodImposto() : base() { }
+
+        public override double Calcula(Orcamento orcamento)
         {
             if (VerificaMaximaTaxacao(orcamento))
             {

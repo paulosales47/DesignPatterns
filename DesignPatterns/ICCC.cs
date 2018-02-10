@@ -8,7 +8,7 @@ namespace DesignPatterns
 {
     public class ICCC : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public override double Calcula(Orcamento orcamento)
         {
             double valor = orcamento.Valor;
 

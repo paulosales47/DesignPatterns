@@ -8,14 +8,18 @@ namespace DesignPatterns
 {
     public class IKCV : TemplateMethodImposto
     {
+        public IKCV(Imposto imposto) : base(imposto) { }
+
+        public IKCV() : base() { }
+        
         protected override double MaximaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.1;
+            return (orcamento.valor * 0.1) + CalculaProximoImposto(orcamento);
         }
 
         protected override double MinimaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.06;
+            return (orcamento.valor * 0.06) + CalculaProximoImposto(orcamento);
         }
 
         protected override bool VerificaMaximaTaxacao(Orcamento orcamento)
