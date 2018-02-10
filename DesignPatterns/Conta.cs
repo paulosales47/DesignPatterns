@@ -16,5 +16,32 @@ namespace DesignPatterns
             get { return saldo; }
         }
 
+        private string titular;
+
+        public string Titular
+        {
+            get { return titular; }
+            set { titular = value; }
+        }
+
+        private int numeroConta;
+
+        public int NumeroConta
+        {
+            get { return numeroConta; }
+            set { numeroConta = value; }
+        }
+
+        private int agencia;
+
+        public int Agencia
+        {
+            get { return agencia; }
+            set { agencia = value; }
+        }
+
+
+
+
     }
 }

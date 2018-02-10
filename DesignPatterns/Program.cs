@@ -34,21 +34,70 @@ namespace DesignPatterns
             //Console.ReadKey();
             #endregion
 
-            Imposto icpp = new ICPP();
-            Imposto ikcv = new IKCV();
-            Imposto ihit = new IHIT();
+            #region Aula 3
 
-            var orcamento = new Orcamento(600);
-            
-            Console.WriteLine(icpp.Calcula(orcamento));
-            Console.WriteLine(ikcv.Calcula(orcamento));
+            //Imposto icpp = new ICPP();
+            //Imposto ikcv = new IKCV();
+            //Imposto ihit = new IHIT();
 
-            orcamento.AdicionaItem(new Item("Carro", 45000));
-            Console.WriteLine(ikcv.Calcula(orcamento));
+            //var orcamento = new Orcamento(600);
 
-            Console.WriteLine(ihit.Calcula(orcamento));
-            orcamento.AdicionaItem(new Item("Carro", 30000));
-            Console.WriteLine(ihit.Calcula(orcamento));
+            //Console.WriteLine(icpp.Calcula(orcamento));
+            //Console.WriteLine(ikcv.Calcula(orcamento));
+
+            //orcamento.AdicionaItem(new Item("Carro", 45000));
+            //Console.WriteLine(ikcv.Calcula(orcamento));
+
+            //Console.WriteLine(ihit.Calcula(orcamento));
+            //orcamento.AdicionaItem(new Item("Carro", 30000));
+            //Console.WriteLine(ihit.Calcula(orcamento));
+
+            var banco = new Banco
+            {
+                NomeBanco = "Banco do Brasil"
+                ,
+                Email = "contato@bb.com.br"
+                ,
+                Endereco = "Praça Cândido Dias Castejon - Centro - São José dos Campos - São Paulo"
+                ,
+                Data = DateTime.Now
+                ,
+                Telefone = "(12) 3907-4545"
+            };
+
+            var listConta = new List<Conta>();
+            var random = new Random();
+
+            for (int i = 0; i < 30; i++)
+            {
+                var conta = new Conta
+                {
+                    Agencia = random.Next(1000,9999)
+                    ,
+                    NumeroConta = random.Next(10000, 99999)
+                    ,
+                    Saldo = random.NextDouble() * 1000
+                    ,
+                    Titular = $"Usuario - {i}"
+                    
+                };
+
+                listConta.Add(conta);
+            }
+
+            var relatorioSimples = new RelatorioSimples();
+            var relatorioComplexo = new RelatorioComplexo();
+
+            relatorioSimples.ImprimeRelatorio(listConta, banco);
+
+            Console.ReadKey();
+            Console.Clear();
+
+            relatorioComplexo.ImprimeRelatorio(listConta, banco);
+
+            #endregion Aula3
+
+
 
             Console.ReadKey();
         }
