@@ -14,7 +14,7 @@ namespace DesignPatterns
         {
             if(orcamento.ListaProduto.Count > 5)
             {
-                return (orcamento.valor * 0.1);
+                return (orcamento.Valor * 0.1);
             }
 
             return proximo.Desconto(orcamento);

@@ -14,17 +14,17 @@ namespace DesignPatterns
 
         protected override double MaximaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.07 + CalculaProximoImposto(orcamento);
+            return orcamento.Valor * 0.07 + CalculaProximoImposto(orcamento);
         }
 
         protected override double MinimaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor * 0.05 + CalculaProximoImposto(orcamento);
+            return orcamento.Valor * 0.05 + CalculaProximoImposto(orcamento);
         }
 
         protected override bool VerificaMaximaTaxacao(Orcamento orcamento)
         {
-            return orcamento.valor > 500;
+            return orcamento.Valor > 500;
         }
     }
 }

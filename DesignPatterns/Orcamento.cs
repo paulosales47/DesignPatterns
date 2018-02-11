@@ -27,6 +27,7 @@ namespace DesignPatterns
         {
             this.Valor = valor;
             this.listaProduto = new List<Item>();
+            this.status = new EmAprovacao();
         }
 
         public void AdicionaItem(Item item)
@@ -41,6 +42,15 @@ namespace DesignPatterns
             get { return status; }
             set { status = value; }
         }
+
+        private bool descontoAplicado;
+
+        public bool DescontoAplicado
+        {
+            get { return descontoAplicado; }
+        }
+
+
 
         public void Aprova()
         {
@@ -59,7 +69,13 @@ namespace DesignPatterns
 
         public void AplicaDescontoExtra()
         {
+            if (this.descontoAplicado)
+            {
+                throw new Exception("Desconto já aplicado");
+            }
+
             status.AplicaDescontoExtra(this);
+            this.descontoAplicado = true;
         }
     }
 }

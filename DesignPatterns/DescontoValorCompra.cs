@@ -12,7 +12,7 @@ namespace DesignPatterns
 
         public double Desconto(Orcamento orcamento)
         {
-            double valorCompra = orcamento.valor;
+            double valorCompra = orcamento.Valor;
             
             if (valorCompra > 500) return (valorCompra * 0.07);
 

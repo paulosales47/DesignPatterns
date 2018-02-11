@@ -18,7 +18,7 @@ namespace DesignPatterns
 
             if (vendaCasada)
             {
-                return (orcamento.valor * 0.05);
+                return (orcamento.Valor * 0.05);
             }
 
             return proximo.Desconto(orcamento);

@@ -14,7 +14,7 @@ namespace DesignPatterns
         
         public override double Calcula(Orcamento orcamento)
         {
-            return (orcamento.valor * 0.06) + CalculaProximoImposto(orcamento);
+            return (orcamento.Valor * 0.06) + CalculaProximoImposto(orcamento);
         }
     }
 }

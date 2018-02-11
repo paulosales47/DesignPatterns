@@ -10,12 +10,12 @@ namespace DesignPatterns
     {
         protected override double MaximaTaxacao(Orcamento orcamento)
         {
-            return ((orcamento.valor * 0.13) + 100);
+            return ((orcamento.Valor * 0.13) + 100);
         }
 
         protected override double MinimaTaxacao(Orcamento orcamento)
         {
-            return 0.01 * orcamento.ListaProduto.Count * orcamento.valor;
+            return 0.01 * orcamento.ListaProduto.Count * orcamento.Valor;
         }
 
         protected override bool VerificaMaximaTaxacao(Orcamento orcamento)

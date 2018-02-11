@@ -105,43 +105,69 @@ namespace DesignPatterns
             //Console.WriteLine(imposto.Calcula(orcamento));
 
             /////////////////////////////////////////////////////////////////////////
-            
-            var listConta = new List<Conta>();
-            var random = new Random();
 
-            for (int i = 0; i < 30; i++)
-            {
-                var conta = new Conta
-                {
-                    Agencia = random.Next(1000, 9999)
-                    ,
-                    NumeroConta = random.Next(10000, 99999)
-                    ,
-                    Saldo = random.Next(-100000, 600000)
-                    ,
-                    Titular = $"Usuario - {i}"
-                    ,
-                    DataAbertura = new DateTime(random.Next(2015,2019), random.Next(1,12), random.Next(1,29)) 
+            //var listConta = new List<Conta>();
+            //var random = new Random();
 
-                };
+            //for (int i = 0; i < 30; i++)
+            //{
+            //    var conta = new Conta
+            //    {
+            //        Agencia = random.Next(1000, 9999)
+            //        ,
+            //        NumeroConta = random.Next(10000, 99999)
+            //        ,
+            //        Saldo = random.Next(-100000, 600000)
+            //        ,
+            //        Titular = $"Usuario - {i}"
+            //        ,
+            //        DataAbertura = new DateTime(random.Next(2015,2019), random.Next(1,12), random.Next(1,29)) 
 
-                listConta.Add(conta);
-            }
+            //    };
+
+            //    listConta.Add(conta);
+            //}
 
 
-            var filtros = (new FiltroAltoValor(new FiltroData()));
+            //var filtros = (new FiltroAltoValor(new FiltroData()));
 
-            var contaFiltradas = filtros.Filtra(listConta);
+            //var contaFiltradas = filtros.Filtra(listConta);
 
-            contaFiltradas.ForEach(conta =>
-            {
-                Console.WriteLine("Titular: " + conta.Titular + " | Saldo: " + conta.Saldo + " | Data Abertura: " + conta.DataAbertura.ToShortDateString());
-            });
+            //contaFiltradas.ForEach(conta =>
+            //{
+            //    Console.WriteLine("Titular: " + conta.Titular + " | Saldo: " + conta.Saldo + " | Data Abertura: " + conta.DataAbertura.ToShortDateString());
+            //});
 
             #endregion Aula 4
 
+            #region Aula 5
+
+            try
+            {
+                var orcamento = new Orcamento(1000);
+                Console.WriteLine(orcamento.Valor);
+
+                orcamento.AplicaDescontoExtra();
+                Console.WriteLine(orcamento.Valor);
+
+                orcamento.Aprova();
+                orcamento.AplicaDescontoExtra();
+                Console.WriteLine(orcamento.Valor);
+
+                orcamento.Finaliza();
+                orcamento.AplicaDescontoExtra();
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            #endregion Aula 5
+
             Console.ReadKey();
         }
+
+        
     }
     
 }
