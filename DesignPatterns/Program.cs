@@ -97,21 +97,55 @@ namespace DesignPatterns
 
             #endregion Aula3
 
-            #region Aula4
+            #region Aula 4
 
             //var imposto = new ISS(new ICMS(new ICPP(new ImpostoImportacao())));
             //var orcamento = new Orcamento(1000);
 
             //Console.WriteLine(imposto.Calcula(orcamento));
+
+            /////////////////////////////////////////////////////////////////////////
             
+            var listConta = new List<Conta>();
+            var random = new Random();
+
+            for (int i = 0; i < 30; i++)
+            {
+                var conta = new Conta
+                {
+                    Agencia = random.Next(1000, 9999)
+                    ,
+                    NumeroConta = random.Next(10000, 99999)
+                    ,
+                    Saldo = random.Next(-100000, 600000)
+                    ,
+                    Titular = $"Usuario - {i}"
+                    ,
+                    DataAbertura = new DateTime(random.Next(2015,2019), random.Next(1,12), random.Next(1,29)) 
+
+                };
+
+                listConta.Add(conta);
+            }
 
 
+            var filtros = (new FiltroAltoValor(new FiltroData()));
+
+            var contaFiltradas = filtros.Filtra(listConta);
+
+            contaFiltradas.ForEach(conta =>
+            {
+                Console.WriteLine("Titular: " + conta.Titular + " | Saldo: " + conta.Saldo + " | Data Abertura: " + conta.DataAbertura.ToShortDateString());
+            });
 
             #endregion Aula 4
 
             Console.ReadKey();
         }
     }
+    
 }
+
+
 
 

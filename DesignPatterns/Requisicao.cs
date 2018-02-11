@@ -23,10 +23,7 @@ namespace DesignPatterns
         
         public string RequisicaoConta(Conta conta)
         {
-            IFormato f3 = new PORCENTO(null);
-            IFormato f2 = new XML(f3);
-            IFormato f1 = new CVS(f2);
-
+            IFormato f1 = new PORCENTO(new XML(new CVS(null)));
 
             return f1.ConverteConta(conta, formato);
         }

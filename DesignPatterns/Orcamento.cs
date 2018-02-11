@@ -8,7 +8,7 @@ namespace DesignPatterns
 {
     public class Orcamento
     {
-        public double valor;
+        private double valor;
         private IList<Item> listaProduto;
 
         public IList<Item> ListaProduto
@@ -32,6 +32,34 @@ namespace DesignPatterns
         public void AdicionaItem(Item item)
         {
             this.listaProduto.Add(item);
+        }
+
+        private IEstadoOrcamento status;
+
+        public IEstadoOrcamento Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public void Aprova()
+        {
+            status.Aprova(this);
+        }
+
+        public void Reprova()
+        {
+            status.Reprova(this);
+        }
+
+        public void Finaliza()
+        {
+            status.Finaliza(this);
+        }
+
+        public void AplicaDescontoExtra()
+        {
+            status.AplicaDescontoExtra(this);
         }
     }
 }

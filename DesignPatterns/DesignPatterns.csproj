@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aprovado.cs" />
     <Compile Include="Arrojado.cs" />
     <Compile Include="Banco.cs" />
     <Compile Include="CalculadorDeDescontos.cs" />
@@ -52,12 +53,19 @@
     <Compile Include="DescontoQuantidadeItens.cs" />
     <Compile Include="DescontoValorCompra.cs" />
     <Compile Include="DescontoVendaCasada.cs" />
+    <Compile Include="EmAprovacao.cs" />
+    <Compile Include="Filtro.cs" />
+    <Compile Include="FiltroAltoValor.cs" />
+    <Compile Include="FiltroBaixoValor.cs" />
+    <Compile Include="FiltroData.cs" />
+    <Compile Include="Finalizado.cs" />
     <Compile Include="Formato.cs" />
     <Compile Include="ICCC.cs" />
     <Compile Include="ICMS.cs" />
     <Compile Include="ICPP.cs" />
     <Compile Include="ICSS.cs" />
     <Compile Include="IDesconto.cs" />
+    <Compile Include="IEstadoOrcamento.cs" />
     <Compile Include="IFormato.cs" />
     <Compile Include="IHIT.cs" />
     <Compile Include="IKCV.cs" />
@@ -75,6 +83,7 @@
     <Compile Include="RelatorioComplexo.cs" />
     <Compile Include="RelatorioSimples.cs" />
     <Compile Include="RelatorioTemplate.cs" />
+    <Compile Include="Reprovado.cs" />
     <Compile Include="Requisicao.cs" />
     <Compile Include="SemDesconto.cs" />
     <Compile Include="TemplateMethodImposto.cs" />

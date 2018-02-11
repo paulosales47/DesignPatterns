@@ -40,8 +40,12 @@ namespace DesignPatterns
             set { agencia = value; }
         }
 
+        private DateTime dataAbertura;
 
-
-
+        public DateTime DataAbertura
+        {
+            get { return dataAbertura; }
+            set { dataAbertura = value; }
+        }
     }
 }
