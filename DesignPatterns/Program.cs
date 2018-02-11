@@ -142,26 +142,39 @@ namespace DesignPatterns
 
             #region Aula 5
 
+            //try
+            //{
+            //    var orcamento = new Orcamento(1000);
+            //    Console.WriteLine(orcamento.Valor);
+
+            //    orcamento.AplicaDescontoExtra();
+            //    Console.WriteLine(orcamento.Valor);
+
+            //    orcamento.Aprova();
+            //    orcamento.AplicaDescontoExtra();
+            //    Console.WriteLine(orcamento.Valor);
+
+            //    orcamento.Finaliza();
+            //    orcamento.AplicaDescontoExtra();
+
+            //}catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
+            ///////////////////////////////////////////////////
             try
             {
-                var orcamento = new Orcamento(1000);
-                Console.WriteLine(orcamento.Valor);
-
-                orcamento.AplicaDescontoExtra();
-                Console.WriteLine(orcamento.Valor);
-
-                orcamento.Aprova();
-                orcamento.AplicaDescontoExtra();
-                Console.WriteLine(orcamento.Valor);
-
-                orcamento.Finaliza();
-                orcamento.AplicaDescontoExtra();
-
-            }catch(Exception ex)
+                var conta = new Conta(-1000);
+                Console.WriteLine(conta.Status);
+                conta.Deposito(5000);
+                Console.WriteLine(conta.Status);
+                conta.Deposito(5000);
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
             #endregion Aula 5
 
             Console.ReadKey();

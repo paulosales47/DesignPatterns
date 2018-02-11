@@ -65,6 +65,7 @@
     <Compile Include="ICPP.cs" />
     <Compile Include="ICSS.cs" />
     <Compile Include="IDesconto.cs" />
+    <Compile Include="IEstadoConta.cs" />
     <Compile Include="IEstadoOrcamento.cs" />
     <Compile Include="IFormato.cs" />
     <Compile Include="IHIT.cs" />
@@ -75,8 +76,10 @@
     <Compile Include="ISS.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Moderado.cs" />
+    <Compile Include="Negativo.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="PORCENTO.cs" />
+    <Compile Include="Positivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealizadorDeInvestimento.cs" />

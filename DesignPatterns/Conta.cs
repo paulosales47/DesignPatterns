@@ -47,5 +47,46 @@ namespace DesignPatterns
             get { return dataAbertura; }
             set { dataAbertura = value; }
         }
+
+        private IEstadoConta status;
+
+        public IEstadoConta Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public void Saque(double valor)
+        {
+            this.status.Saque(this, valor);
+            VerificaStatus();
+        }
+
+        public void Deposito(double valor)
+        {
+            this.status.Deposito(this, valor);
+            VerificaStatus();
+        }
+
+        public Conta(double saldo)
+        {
+            if (saldo > 0)
+                this.status = new Positivo();
+            else
+                this.status = new Negativo();
+        }
+
+        public Conta()
+        {}
+
+        private void VerificaStatus()
+        {
+            bool contaPositiva = this.status.GetType() == typeof(Positivo);
+
+            if (this.saldo < 0 && contaPositiva)
+                this.status.Negativo(this);
+            else if(!contaPositiva)
+                this.status.Positivo(this);
+        }
     }
 }
