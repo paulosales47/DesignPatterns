@@ -18,6 +18,12 @@ namespace DesignPatterns
 
         private double valor;
 
+        public ItemDaNota(string descricao, double valor)
+        {
+            this.descricao = descricao;
+            this.valor = valor;
+        }
+
         public double Valor
         {
             get { return valor; }

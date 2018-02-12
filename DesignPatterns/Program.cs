@@ -163,24 +163,40 @@ namespace DesignPatterns
             //}
 
             ///////////////////////////////////////////////////
-            try
-            {
-                var conta = new Conta(-1000);
-                Console.WriteLine(conta.Status);
-                conta.Deposito(5000);
-                Console.WriteLine(conta.Status);
-                conta.Deposito(5000);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //try
+            //{
+            //    var conta = new Conta(-1000);
+            //    Console.WriteLine(conta.Status);
+            //    conta.Deposito(5000);
+            //    Console.WriteLine(conta.Status);
+            //    conta.Deposito(5000);
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
             #endregion Aula 5
+
+            #region Aula 6
+
+            NotaFiscal notaFiscal = new NotaFiscalBuilder()
+                .WithCNPJ("123456789")
+                .WithEmpresa("Alura")
+                .WithObservacoes("Teste")
+                .With(new ItemDaNotaBuilder()
+                                .WithDescricao("Carro")
+                                .WithValor(45000)
+                                .Builder())
+                .With(new ItemDaNotaBuilder()
+                                .WithDescricao("Moto")
+                                .WithValor(12000)
+                                .Builder())
+                .Build();
+
+            #endregion Aula 6
 
             Console.ReadKey();
         }
-
-        
     }
     
 }
