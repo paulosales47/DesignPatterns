@@ -8,29 +8,32 @@ namespace DesignPatterns
 {
     public class NotaFiscalBuilder
     {
-        public NotaFiscalBuilder()
+        public NotaFiscalBuilder(List<IAcaoNota> listaAcao)
         {
             this.listaItem = new List<ItemDaNota>();
+            this.listaAcao = listaAcao;
             this.data = DateTime.Now;
         }
 
-        private string  razaoSocial { get; set; }
-        
+        private string razaoSocial { get; set; }
+
         private string cnpj { get; set; }
-        
+
         private double valorBruto { get; set; }
-        
+
         private double impostos { get; set; }
-        
+
         private DateTime data { get; set; }
-        
+
         private List<ItemDaNota> listaItem { get; set; }
 
-        public string observacoes { get; private set; }
+        private string observacoes { get; set; }
+
+        private List<IAcaoNota> listaAcao { get; set; }
 
         public NotaFiscal Build()
         {
-            return new NotaFiscal
+            var notaFiscal =  new NotaFiscal
                 (
                      this.razaoSocial
                     , this.cnpj
@@ -40,6 +43,22 @@ namespace DesignPatterns
                     , this.observacoes
                     , this.listaItem
                 );
+
+            this.ExecutaListaAcao(notaFiscal);
+
+            return notaFiscal;
+        }
+
+        public void AddAcaoNota(IAcaoNota acaoNota)
+        {
+            this.listaAcao.Add(acaoNota);
+        }
+
+        private void ExecutaListaAcao(NotaFiscal notaFiscal)
+        {
+            this.listaAcao.ForEach(acao => {
+                acao.Executa(notaFiscal);
+            });
         }
 
         public NotaFiscalBuilder With(ItemDaNota item)

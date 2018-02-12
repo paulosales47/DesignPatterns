@@ -60,6 +60,7 @@
     <Compile Include="FiltroData.cs" />
     <Compile Include="Finalizado.cs" />
     <Compile Include="Formato.cs" />
+    <Compile Include="IAcaoNota.cs" />
     <Compile Include="ICCC.cs" />
     <Compile Include="ICMS.cs" />
     <Compile Include="ICPP.cs" />
@@ -81,6 +82,9 @@
     <Compile Include="Negativo.cs" />
     <Compile Include="NotaFiscal.cs" />
     <Compile Include="NotaFiscalBuilder.cs" />
+    <Compile Include="NotaFiscalDAO.cs" />
+    <Compile Include="NotaFiscalEmail.cs" />
+    <Compile Include="NotaFiscalMutiplicador.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="PORCENTO.cs" />
     <Compile Include="Positivo.cs" />

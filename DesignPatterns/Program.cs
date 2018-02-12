@@ -179,7 +179,33 @@ namespace DesignPatterns
 
             #region Aula 6
 
-            NotaFiscal notaFiscal = new NotaFiscalBuilder()
+            //NotaFiscal notaFiscal = new NotaFiscalBuilder()
+            //    .WithCNPJ("123456789")
+            //    .WithEmpresa("Alura")
+            //    .WithObservacoes("Teste")
+            //    .With(new ItemDaNotaBuilder()
+            //                    .WithDescricao("Carro")
+            //                    .WithValor(45000)
+            //                    .Builder())
+            //    .With(new ItemDaNotaBuilder()
+            //                    .WithDescricao("Moto")
+            //                    .WithValor(12000)
+            //                    .Builder())
+            //    .Build();
+
+            #endregion Aula 6
+
+            #region Aula 7
+
+
+            var listaAcao = new List<IAcaoNota>
+            {
+                 new NotaFiscalEmail()
+                ,new NotaFiscalDAO()
+                ,new NotaFiscalMutiplicador(10)
+            };
+            
+            NotaFiscal notaFiscal = new NotaFiscalBuilder(listaAcao)
                 .WithCNPJ("123456789")
                 .WithEmpresa("Alura")
                 .WithObservacoes("Teste")
@@ -193,10 +219,13 @@ namespace DesignPatterns
                                 .Builder())
                 .Build();
 
-            #endregion Aula 6
+            #endregion Aula 7
+
+
 
             Console.ReadKey();
         }
+
     }
     
 }
